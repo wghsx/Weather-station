@@ -1,0 +1,28 @@
+# Keil MDK 编译产物
+Objects/
+Listings/
+DebugConfig/
+*.o
+*.d
+*.crf
+*.axf
+*.hex
+*.bin
+*.map
+*.htm
+*.lnp
+*.dep
+*.iex
+*.sct
+*.lst
+*.build_log.htm
+
+# Keil 本地界面布局（包含本机用户名，不应提交）
+*.uvguix.*
+*.scvd
+
+# 备份、临时与日志
+*.bak
+*.tmp
+*.log
+*~
