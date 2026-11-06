@@ -46,8 +46,12 @@ int main(void)
 		{
 			ui_flag = 1;
 			LCD_ShowString(100, 0, RED, WHITE, (u8*)"”Ô“Ù∆¯œÛ’æ", 16);
-			if(water_flag == 1)
-				Check_Weather();
+		}
+		
+		if(water_flag == 1)
+		{
+			water_flag = 0;
+			Check_Weather();
 		}
 		
 	}

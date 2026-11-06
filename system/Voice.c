@@ -8,6 +8,8 @@
 // Global U4 struct instance
 U4 u4; // u4已经在Voice.h中声明为extern，这里也需要声明extern
 
+extern u8 water_flag;   // 定义在 main.c，用于通知主循环发起天气查询
+
 void Voice_Init(void)
 {
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC,ENABLE);
@@ -129,6 +131,7 @@ void Voice_Recognition(void)
                 case 0x09: // "curtq" (今天天气怎么样)
                     printf("Voice Command: Weather Query \r\n");
 					Voice_Num(03, 000);
+                    water_flag = 1;   // 置位后由主循环调用 Check_Weather
                     break;
                 default:
                     printf("Unknown Voice Command ID: 0x%02X\r\n", u4.buff[2]);
